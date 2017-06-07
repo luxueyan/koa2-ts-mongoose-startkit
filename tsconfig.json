@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "es2017"
+    ],
+    "module": "commonjs",
+    "target": "es2017",
+    "preserveConstEnums": true,
+    "isolatedModules": false,
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "strictNullChecks": true,
+    "removeComments": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "outDir": "build",
+    "watch": false,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [
+      "node"
+      // "es6-shim"
+    ]
+  },
+  "include": [
+    "./opn.ts",
+    "./types/**/*.ts",
+    "./src/**/*.ts"
+  ],
+  "exclude": ["node_modules/@types"]
+}

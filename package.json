@@ -1,0 +1,38 @@
+{
+  "name": "kt-op-pano-backend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon",
+    "opn": "ts-node opn.ts --host=http://localhost:3000",
+    "compile": "tsc src/app.ts",
+    "pm2": "pm2 start pm2.json",
+    "lint": "tslint -p .",
+    "test": "echo 'Error: no test specified' && exit 1"
+  },
+  "dependencies": {
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^7.4.0",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^3.2.0",
+    "koa-convert": "^1.2.0",
+    "koa-json": "^2.0.2",
+    "koa-jwt": "^3.2.1",
+    "koa-log4": "^2.2.1",
+    "koa-logger": "^2.0.1",
+    "koa-onerror": "^1.2.1",
+    "koa-router": "^7.0.1",
+    "koa-static": "^3.0.0",
+    "koa-views": "^5.2.1",
+    "mongoose": "^4.9.7"
+  },
+  "devDependencies": {
+    "@types/es6-shim": "^0.31.33",
+    "@types/node": "^7.0.15",
+    "minimist": "^1.2.0",
+    "nodemon": "^1.8.1",
+    "opn": "^5.0.0",
+    "ts-node": "^3.0.2",
+    "typescript": "^2.3.3"
+  }
+}

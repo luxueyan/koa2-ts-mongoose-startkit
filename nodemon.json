@@ -1,0 +1,21 @@
+{
+  "restartable": "rs",
+  "verbose": false,
+  "env": {
+    "NODE_ENV": "development",
+    "PORT": "3000"
+  },
+  "exec": "ts-node --inspect src/main.ts",
+  "watch": [
+    "src/",
+    "config/"
+  ],
+  "ignore": [
+    "src/**/*.spec.ts",
+    ".git",
+    ".idea",
+    "node_modules",
+    "logs"
+  ],
+  "ext": "ts jade"
+}
