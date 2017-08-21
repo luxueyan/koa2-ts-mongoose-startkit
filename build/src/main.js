@@ -1,10 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const app_1 = require("../src/app");
-const Debug = require("debug");
 const http = require("http");
-const debug = new Debug('demo:server');
-const port = normalizePort(process.env.PORT || '3000');
+const app_1 = require("../src/app");
+const env_config_1 = require("../config/env.config");
+const Log4js = require("koa-log4");
+const logger = Log4js.getLogger('main');
+const port = normalizePort(env_config_1.default.listenPort || process.env.PORT || '3000');
 const server = http.createServer(app_1.default.callback());
 server.listen(port);
 server.on('error', onError);
@@ -26,11 +27,11 @@ function onError(error) {
     const bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
     switch (error.code) {
         case 'EACCES':
-            console.error(bind + ' requires elevated privileges');
+            logger.error(bind + ' requires elevated privileges');
             process.exit(1);
             break;
         case 'EADDRINUSE':
-            console.error(bind + ' is already in use');
+            logger.error(bind + ' is already in use');
             process.exit(1);
             break;
         default:
@@ -40,6 +41,6 @@ function onError(error) {
 function onListening() {
     const addr = server.address();
     const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
-    debug('Listening on ' + bind);
+    logger.info('Listening on ' + bind);
 }
 //# sourceMappingURL=main.js.map
